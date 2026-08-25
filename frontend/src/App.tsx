@@ -1,8 +1,8 @@
 
 function App() {
   return (
-      <div>
-   
+      <div className="bg-blue-600 h-screen w-screen">
+   hi
       </div>
   )
 }
