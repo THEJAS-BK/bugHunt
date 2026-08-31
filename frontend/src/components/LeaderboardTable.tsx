@@ -1,4 +1,5 @@
 import type { LeaderboardEntry } from '../types'
+import { Link } from 'react-router-dom'
 
 interface LeaderboardTableProps {
   entries: LeaderboardEntry[]
@@ -52,15 +53,18 @@ export function LeaderboardTable({ entries, currentUserId }: LeaderboardTablePro
               >
                 <td className="px-4 py-2.5 font-mono text-sm text-neutral-500">{entry.rank}</td>
                 <td className="px-4 py-2.5">
-                  <div className="flex items-center gap-2.5">
+                  <Link
+                    to={`/users/${entry.userId}`}
+                    className="inline-flex items-center gap-2.5 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900"
+                  >
                     <div className="h-6 w-6 shrink-0 rounded bg-neutral-200 text-[10px] font-medium text-neutral-600 flex items-center justify-center">
                       {getInitials(entry.name)}
                     </div>
-                    <span className={`text-sm ${isCurrentUser ? 'font-medium text-neutral-900' : 'text-neutral-700'}`}>
+                    <span className="text-sm text-neutral-700 underline-offset-2 hover:underline">
                       {entry.name}
                       {isCurrentUser && <span className="ml-1.5 text-xs text-neutral-400">(you)</span>}
                     </span>
-                  </div>
+                  </Link>
                 </td>
                 <td className="px-4 py-2.5 font-mono text-sm font-medium text-neutral-900">{entry.totalSolved}</td>
                 <td className="px-4 py-2.5 font-mono text-sm text-emerald-600">{entry.easy}</td>

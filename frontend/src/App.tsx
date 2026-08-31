@@ -4,6 +4,7 @@ import { Dashboard } from './pages/Dashboard'
 import { ProblemListPage } from './pages/ProblemListPage'
 import { ProblemPage } from './pages/ProblemPage'
 import { LeaderboardPage } from './pages/LeaderboardPage'
+import { ProfilePage } from './pages/ProfilePage'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/problems" element={<ProblemListPage />} />
           <Route path="/problems/:id" element={<ProblemPage />} />
           <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/users/:userId" element={<ProfilePage />} />
         </Routes>
       </main>
     </div>
