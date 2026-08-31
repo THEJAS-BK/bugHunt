@@ -12,7 +12,7 @@ const statuses = ['all', 'solved', 'unsolved'] as const
 const tags = ['all', 'react', 'hooks', 'components', 'state', 'styling', 'events', 'performance', 'forms'] as const
 
 const selectClass =
-  'border border-neutral-200 rounded-lg px-3 py-1.5 text-sm bg-white text-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+  'border border-neutral-200 rounded px-3 py-1.5 text-sm bg-white text-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900'
 
 export function FilterBar({
   difficulty,
@@ -23,7 +23,7 @@ export function FilterBar({
   onTagChange,
 }: FilterBarProps) {
   return (
-    <div className="flex flex-col sm:flex-row gap-4">
+    <div className="flex flex-col sm:flex-row gap-3">
       <div className="flex flex-col gap-1">
         <label className="text-xs text-neutral-500 font-medium">Difficulty</label>
         <select

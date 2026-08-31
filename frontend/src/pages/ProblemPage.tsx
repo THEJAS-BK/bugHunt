@@ -9,9 +9,9 @@ import { ResizeHandle } from '../components/ResizeHandle'
 import type { Submission, Difficulty } from '../types'
 
 const difficultyColors: Record<Difficulty, string> = {
-  easy: 'bg-green-50 text-green-700',
-  medium: 'bg-yellow-50 text-yellow-700',
-  hard: 'bg-red-50 text-red-700',
+  easy: 'bg-neutral-50 text-emerald-600',
+  medium: 'bg-neutral-50 text-amber-600',
+  hard: 'bg-neutral-50 text-red-600',
 }
 
 export function ProblemPage() {
@@ -55,12 +55,12 @@ export function ProblemPage() {
     <div>
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <h1 className="text-2xl font-semibold text-neutral-900">{problem.title}</h1>
-        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${difficultyColors[problem.difficulty]}`}>
+        <span className={`text-xs font-medium px-2 py-0.5 rounded ${difficultyColors[problem.difficulty]}`}>
           {problem.difficulty}
         </span>
         <div className="flex gap-1.5">
           {problem.tags.map((tag) => (
-            <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600">
+            <span key={tag} className="text-xs px-2 py-0.5 rounded bg-neutral-100 text-neutral-600">
               {tag}
             </span>
           ))}
@@ -69,14 +69,14 @@ export function ProblemPage() {
 
       <button
         onClick={handleSubmit}
-        className="mb-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+        className="mb-4 rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
       >
         Submit
       </button>
 
       <SubmissionResults submission={submission} />
 
-      <div className="mt-4 hidden md:flex h-[600px] rounded-lg border border-neutral-200 bg-white overflow-hidden">
+      <div className="mt-4 hidden md:flex h-[600px] rounded border border-neutral-200 bg-white overflow-hidden">
         <div className="flex" style={{ width: `${leftWidth}%` }}>
           <div className="flex w-10 flex-col border-r border-neutral-200 bg-neutral-50">
             {(['preview', 'code', 'output'] as const).map((tab) => (
@@ -85,7 +85,7 @@ export function ProblemPage() {
                 onClick={() => setActiveTab(tab)}
                 className={`flex-1 writing-vertical text-xs font-medium transition-colors ${
                   activeTab === tab
-                    ? 'bg-white text-neutral-900 border-r-2 border-blue-600'
+                    ? 'bg-white text-neutral-900 border-r-2 border-neutral-900'
                     : 'text-neutral-500 hover:text-neutral-700 hover:bg-neutral-100'
                 }`}
                 style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)' }}
@@ -119,13 +119,13 @@ export function ProblemPage() {
       </div>
 
       <div className="md:hidden space-y-4">
-        <div className="h-64 rounded-lg border border-neutral-200 overflow-hidden">
+        <div className="h-64 rounded border border-neutral-200 overflow-hidden">
           <ReferencePreview src={problem.referencePreviewSrc} />
         </div>
-        <div className="h-64 rounded-lg border border-neutral-200 overflow-hidden">
+        <div className="h-64 rounded border border-neutral-200 overflow-hidden">
           <CodeEditor code={code} onChange={setCode} />
         </div>
-        <div className="h-48 rounded-lg border border-neutral-200 overflow-hidden">
+        <div className="h-48 rounded border border-neutral-200 overflow-hidden">
           <UserPreview />
         </div>
       </div>

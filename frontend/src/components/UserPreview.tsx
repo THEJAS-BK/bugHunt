@@ -1,7 +1,7 @@
 export function UserPreview() {
   return (
     <div className="flex h-full flex-col items-center justify-center bg-white p-4">
-      <div className="rounded-lg border border-dashed border-neutral-300 p-8 text-center">
+      <div className="rounded border border-dashed border-neutral-300 p-8 text-center">
         <svg
           className="mx-auto mb-3 h-8 w-8 text-neutral-300"
           viewBox="0 0 24 24"

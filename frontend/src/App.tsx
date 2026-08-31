@@ -6,7 +6,7 @@ import { ProblemPage } from './pages/ProblemPage'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-neutral-50 font-sans text-neutral-900">
+    <div className="min-h-screen bg-white font-sans text-neutral-900">
       <Navbar />
       <main className="mx-auto max-w-7xl px-4 py-6">
         <Routes>

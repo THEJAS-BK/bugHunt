@@ -24,7 +24,7 @@ export function ProfileDropdown() {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 rounded-md p-1.5 text-sm hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
       >
-        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-neutral-200 text-xs font-medium text-neutral-700">
+        <div className="flex h-7 w-7 items-center justify-center rounded bg-neutral-200 text-xs font-medium text-neutral-700">
           {initials}
         </div>
         <span className="hidden text-sm font-medium text-neutral-700 sm:block">{mockUser.name}</span>
@@ -33,7 +33,7 @@ export function ProfileDropdown() {
         </svg>
       </button>
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-1 w-48 rounded-lg border border-neutral-200 bg-white py-1 shadow-sm">
+        <div className="absolute right-0 top-full z-50 mt-1 w-48 rounded border border-neutral-200 bg-white py-1">
           <div className="border-b border-neutral-100 px-3 py-2">
             <p className="text-sm font-medium text-neutral-900">{mockUser.name}</p>
             <p className="text-xs text-neutral-500">{mockUser.email}</p>

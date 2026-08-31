@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import type { Problem } from '../types'
 
 const difficultyClasses: Record<string, string> = {
-  easy: 'bg-green-50 text-green-700',
-  medium: 'bg-yellow-50 text-yellow-700',
-  hard: 'bg-red-50 text-red-700',
+  easy: 'bg-neutral-50 text-emerald-600',
+  medium: 'bg-neutral-50 text-amber-600',
+  hard: 'bg-neutral-50 text-red-600',
 }
 
 interface ProblemListItemProps {
@@ -17,14 +17,14 @@ export function ProblemListItem({ problem }: ProblemListItemProps) {
       <td className="px-4 py-3">
         <Link
           to={`/problems/${problem.id}`}
-          className="text-blue-600 hover:text-blue-800 font-medium text-sm"
+          className="text-neutral-900 hover:text-neutral-700 font-medium text-sm underline-offset-2 hover:underline"
         >
           {problem.title}
         </Link>
       </td>
       <td className="px-4 py-3">
         <span
-          className={`text-xs font-medium px-2 py-0.5 rounded-full ${difficultyClasses[problem.difficulty] ?? ''}`}
+          className={`text-xs font-medium px-2 py-0.5 rounded ${difficultyClasses[problem.difficulty] ?? ''}`}
         >
           {problem.difficulty.charAt(0).toUpperCase() + problem.difficulty.slice(1)}
         </span>
@@ -34,7 +34,7 @@ export function ProblemListItem({ problem }: ProblemListItemProps) {
           {problem.tags.map((tag) => (
             <span
               key={tag}
-              className="bg-neutral-100 text-neutral-600 text-xs px-2 py-0.5 rounded-full"
+              className="bg-neutral-100 text-neutral-600 text-xs px-2 py-0.5 rounded"
             >
               {tag}
             </span>
