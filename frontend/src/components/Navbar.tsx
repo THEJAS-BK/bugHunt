@@ -37,6 +37,16 @@ export function Navbar() {
             >
               Problems
             </NavLink>
+            <NavLink
+              to="/leaderboard"
+              className={({ isActive }) =>
+                `px-3 py-1.5 text-sm font-medium transition-colors border-b-2 ${
+                  isActive ? 'text-neutral-900 border-neutral-900' : 'text-neutral-500 hover:text-neutral-700 border-transparent'
+                }`
+              }
+            >
+              Leaderboard
+            </NavLink>
           </div>
         </div>
         <ProfileDropdown />
