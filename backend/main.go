@@ -21,15 +21,11 @@ func getUsersHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(users)
 }
 
-func addUsersHandler(w http.ResponseWriter, r *http.Request) {
-	users = append(users, User{Name: "three", Email: "three@gmail.com"})
-	w.Header().Set("Content-Type", "application/json")
-	fmt.Println(users)
-}
-
 func main() {
+	a := 89
+	fmt.Println("Hello World", a)
+
 	http.HandleFunc("/users", getUsersHandler)
-	http.HandleFunc("/users", addUsersHandler)
 	fmt.Println("Server running at :8080")
 	http.ListenAndServe(":8080", nil)
 }
