@@ -1,11 +1,4 @@
-interface FilterBarProps {
-  difficulty: string
-  status: string
-  tag: string
-  onDifficultyChange: (v: string) => void
-  onStatusChange: (v: string) => void
-  onTagChange: (v: string) => void
-}
+import type { FilterBarProps } from '../types'
 
 const difficulties = ['all', 'easy', 'medium', 'hard'] as const
 const statuses = ['all', 'solved', 'unsolved'] as const

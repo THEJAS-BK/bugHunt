@@ -1,8 +1,4 @@
-import type { Submission } from '../types'
-
-interface SubmissionResultsProps {
-  submission: Submission | null
-}
+import type { SubmissionResultsProps } from '../types'
 
 export function SubmissionResults({ submission }: SubmissionResultsProps) {
   if (!submission) return null

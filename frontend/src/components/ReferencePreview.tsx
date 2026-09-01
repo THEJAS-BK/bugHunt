@@ -1,6 +1,4 @@
-interface ReferencePreviewProps {
-  src: string
-}
+import type { ReferencePreviewProps } from '../types'
 
 export function ReferencePreview({ src }: ReferencePreviewProps) {
   return (

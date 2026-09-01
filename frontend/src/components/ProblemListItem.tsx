@@ -1,14 +1,10 @@
 import { Link } from 'react-router-dom'
-import type { Problem } from '../types'
+import type { ProblemListItemProps } from '../types'
 
 const difficultyClasses: Record<string, string> = {
   easy: 'bg-neutral-50 text-emerald-600',
   medium: 'bg-neutral-50 text-amber-600',
   hard: 'bg-neutral-50 text-red-600',
-}
-
-interface ProblemListItemProps {
-  problem: Problem
 }
 
 export function ProblemListItem({ problem }: ProblemListItemProps) {

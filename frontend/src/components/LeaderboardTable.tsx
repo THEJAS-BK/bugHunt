@@ -1,10 +1,5 @@
-import type { LeaderboardEntry } from '../types'
+import type { LeaderboardTableProps } from '../types'
 import { Link } from 'react-router-dom'
-
-interface LeaderboardTableProps {
-  entries: LeaderboardEntry[]
-  currentUserId: string
-}
 
 function getInitials(name: string): string {
   return name

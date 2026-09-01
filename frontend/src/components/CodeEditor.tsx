@@ -1,9 +1,5 @@
 import Editor from '@monaco-editor/react'
-
-interface CodeEditorProps {
-  code: string
-  onChange: (value: string) => void
-}
+import type { CodeEditorProps } from '../types'
 
 export function CodeEditor({ code, onChange }: CodeEditorProps) {
   return (

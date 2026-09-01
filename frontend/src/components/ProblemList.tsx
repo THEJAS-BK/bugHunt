@@ -1,9 +1,5 @@
-import type { Problem } from '../types'
+import type { ProblemListProps } from '../types'
 import { ProblemListItem } from './ProblemListItem'
-
-interface ProblemListProps {
-  problems: Problem[]
-}
 
 export function ProblemList({ problems }: ProblemListProps) {
   if (problems.length === 0) {

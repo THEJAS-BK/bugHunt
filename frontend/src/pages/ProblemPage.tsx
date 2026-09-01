@@ -5,15 +5,13 @@ import { CodeEditor } from '../components/CodeEditor'
 import { ReferencePreview } from '../components/ReferencePreview'
 import { UserPreview } from '../components/UserPreview'
 import { SubmissionResults } from '../components/SubmissionResults'
-import type { Submission, Difficulty } from '../types'
+import type { Submission, Difficulty, View } from '../types'
 
 const difficultyColors: Record<Difficulty, string> = {
   easy: 'bg-neutral-50 text-emerald-600',
   medium: 'bg-neutral-50 text-amber-600',
   hard: 'bg-neutral-50 text-red-600',
 }
-
-type View = 'reference' | 'code' | 'output'
 
 const viewButtons: { key: View; label: string }[] = [
   { key: 'reference', label: 'Reference' },

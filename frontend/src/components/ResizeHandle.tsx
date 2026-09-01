@@ -1,9 +1,5 @@
 import { useCallback } from 'react'
-
-interface ResizeHandleProps {
-  direction: 'horizontal' | 'vertical'
-  onResize: (delta: number) => void
-}
+import type { ResizeHandleProps } from '../types'
 
 export function ResizeHandle({ direction, onResize }: ResizeHandleProps) {
   const handlePointerDown = useCallback(
